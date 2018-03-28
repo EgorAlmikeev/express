@@ -5,7 +5,6 @@ const URL = 'https://kodaktor.ru/j/users';
 const PORT = 4321;
 const app = express();
 app
-   .get(/hello/, r => r.res.end('Hello, world!'))
    .get(/users/, async r => { 
       const { data: { users: items } } = await get(URL);
       r.res.render('list', {title: 'Login list', items});
