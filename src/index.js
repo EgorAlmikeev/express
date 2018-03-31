@@ -9,8 +9,9 @@ const PORT = 4321;
 const app = express();
 
 const myLogger =  (req, res, next) => {
-  console.log('LOGGED : ' + moment().format('DD.MM.YYYY HH:mm:ss') + "\t" + req.url);
-  fs.appendFileSync("log.txt", moment().format('DD.MM.YYYY HH:mm:ss') + " " + req.url + "\n",  "ascii");
+  let log_string = moment().format('DD.MM.YYYY HH:mm:ss') + "\t" + req.url;
+  console.log('LOGGED : ' + log_string);
+  fs.appendFileSync("log.txt", log_string + "\n",  "ascii");
   next();
 };
 
