@@ -1,6 +1,6 @@
 # express
 
-### inde.js
+### index.js
 ```javascript
 const express = require('express');
 const { get } = require('axios');
